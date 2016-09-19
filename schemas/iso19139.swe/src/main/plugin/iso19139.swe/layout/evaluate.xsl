@@ -33,6 +33,8 @@
   exclude-result-prefixes="#all">
 
 
+  <xsl:import href="../../iso19139/layout/evaluate.xsl"/>
+
   <!-- Evaluate an expression. This is schema dependant in order to properly
         set namespaces required for evaluate.
 

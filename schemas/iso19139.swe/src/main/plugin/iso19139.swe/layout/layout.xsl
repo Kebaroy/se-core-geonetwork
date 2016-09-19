@@ -58,17 +58,19 @@
                                   $codelists,
                                   .)"/>
 
+    <xsl:variable name="value" select="gmd:MD_ScopeCode/@codeListValue" />
+
     <xsl:call-template name="render-element">
       <xsl:with-param name="label" select="gn-fn-metadata:getLabel($schema, name(), $labels)/label"/>
-      <xsl:with-param name="value" select="gmd:MD_ScopeCode/@codeListValue"/>
+      <xsl:with-param name="value" select="$codelist/entry[code = $value]/label"/>
       <xsl:with-param name="cls" select="local-name()"/>
       <xsl:with-param name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-      <xsl:with-param name="type" select="'select'"/>
+      <xsl:with-param name="type" select="''"/>
       <xsl:with-param name="name" select="''"/>
       <xsl:with-param name="editInfo" select="*/gn:element"/>
       <xsl:with-param name="parentEditInfo" select="gn:element"/>
       <xsl:with-param name="isDisabled" select="true()"/>
-      <xsl:with-param name="listOfValues" select="$codelist" />
+      <xsl:with-param name="listOfValues" select="''" />
     </xsl:call-template>
 
   </xsl:template>

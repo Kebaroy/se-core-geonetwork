@@ -103,7 +103,7 @@
     <gco:CharacterString>SS-EN ISO 19115:2005-geodata.se</gco:CharacterString>
   </gmd:metadataStandardName>
   <gmd:metadataStandardVersion>
-    <gco:CharacterString>Naturvårdsverket 4.0</gco:CharacterString>
+    <gco:CharacterString>4.0</gco:CharacterString>
   </gmd:metadataStandardVersion>
   <gmd:referenceSystemInfo>
     <gmd:MD_ReferenceSystem>

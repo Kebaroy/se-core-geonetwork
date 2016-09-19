@@ -115,6 +115,9 @@
           (not($parentEditInfo) and $editInfo and $editInfo/@min = 1 and $editInfo/@max = 1)">
           <xsl:value-of select="true()"/>
         </xsl:when>
+        <xsl:when test="gn-fn-metadata:getLabel($schema, name(), $labels)/condition = 'mandatory'">
+          <xsl:value-of select="true()"/>
+        </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="false()"/>
         </xsl:otherwise>

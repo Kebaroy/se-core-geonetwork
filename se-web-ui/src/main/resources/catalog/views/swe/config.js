@@ -25,9 +25,9 @@
 
   goog.provide('swe_search_config');
 
-  //var module = angular.module('swe_search_config',
-  // ['pascalprecht.translate']);
-  var module = angular.module('swe_search_config', []);
+  var module = angular.module('swe_search_config',
+      ['pascalprecht.translate']);
+  //var module = angular.module('swe_search_config', []);
 
 
   module.run(['gnSearchSettings', 'gnViewerSettings',
@@ -207,5 +207,14 @@
   /*module.config(['$LOCALES', function($LOCALES) {
     $LOCALES.push('../../catalog/views/swe/locales/|search');
   }]);*/
+
+  module.config(['$LOCALES', function($LOCALES) {
+    $LOCALES.push('../../catalog/views/swe/locales/|search');
+    $LOCALES.push('/../api/0.1/standard/iso19139.swe/' +
+        'codelists/gmd%3ACI_RoleCode');
+    $LOCALES.push('/../api/0.1/standard/iso19139.swe/' +
+        'codelists/gmd%3ACI_DateTypeCode');
+
+  }]);
 
 })();

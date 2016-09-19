@@ -11,7 +11,7 @@
     <div class="site-filter-section-wrapper">
       <div class="site-filter-section">
         <div class="site-geo-type-filter">
-          <span class="filter-label">visa enbart:</span>
+          <span class="filter-label" data-translate="">searchShowOnly</span>
           <ul class="type-filter-list">
             <li>
               <a href="" data-ng-click="toggleMapResources()"
@@ -28,19 +28,13 @@
             <li><a href=""><span class="icon-eye"></span>geoteknik</a></li>
           </ul>
           <div class="other-filters">
-            <a href="" data-ng-click="viewAllMetadata()" class="fltr-link resource-link">Visa alla resurser</a>
-            <a href="" data-ng-click="toggleAdvancedOptions()" class="fltr-link advance-link">Avancerad vy</a>
-            <div class="help-icn-cont other-filter-help-icn">
-              <div class="help-icn-circle"><span class="icon-help"></span></div>
-              <div class="tool-tip-cont">
-                <div class="tool-tip">
-                  <span class="triangle"></span>
-                  <h2>Sökning på ämnesområden</h2>
-                  <p>Markera ett eller flera ämnesområden du vill söka geodata inom.</p>
-                  <p>Kan kombineras med fritextsökning.</p>
-                </div>
-              </div>
-            </div>
+            <a href="" data-ng-click="viewAllMetadata()" class="fltr-link resource-link" data-translate="">viewAllResources</a>
+            <a href="" data-ng-click="toggleAdvancedOptions()" class="fltr-link advance-link"data-translate="">viewAdvance</a>
+
+            <div data-swe-tooltip=""
+                 data-title="{{ 'advancedSearchTooltip-title' | translate }}"
+                 data-text="{{ 'advancedSearchTooltip-desc' | translate }}"
+                 data-link="{{ 'advancedSearchTooltip-link' | translate }}"></div>
           </div>
         </div>
         <div class="filter-options-cont">
@@ -58,34 +52,27 @@
               <div class="date-filter">
                 <div class="left-side-filter" id="abId0.901597265871972" abineguid="B24E06EA694549E08380FB3D35F8BC85">
                   <div class="filter-colm" id="abId0.3915931191863504">
-                    <label>Från datum</label>
+                    <label data-translate="searchFromDate"></label>
                     <div class="custom-fld-cont" id="abId0.891437811112971">
                       <input type="date" placeholder="åååå-mm-dd" data-ng-model="searchObj.params.resourceDateFrom" data-ng-change="triggerSearch()">
                       <!--<span class="icon-calendar-empty"></span>-->
                     </div>
                   </div>
                   <div class="filter-colm till-date-colm" id="abId0.746339667914671">
-                    <label>till datum</label>
+                    <label data-translate="searchToDate"></label>
                     <div class="custom-fld-cont" id="abId0.5676842456397708">
                       <input type="date" placeholder="åååå-mm-dd" data-ng-model="searchObj.params.resourceDateTo" data-ng-change="triggerSearch()">
                       <!--<span class="icon-calendar-empty"></span>-->
                     </div>
-                    <div class="help-icn-cont date-help-icn">
-                      <div class="help-icn-circle"><span class="icon-help"></span></div>
-                      <div class="tool-tip-cont">
-                        <div class="tool-tip">
-                          <span class="triangle"></span>
-                          <h2>Sökning på ämnesområden</h2>
-                          <p>Markera ett eller flera ämnesområden du vill söka geodata inom.</p>
-                          <p>Kan kombineras med fritextsökning.</p>
-                        </div>
-                      </div>
-                    </div>
+                    <div data-swe-tooltip=""
+                         data-title="{{ 'dateFilterTooltip-title' | translate }}"
+                         data-text="{{ 'dateFilterTooltip-desc' | translate }}"
+                         data-link="{{ 'dateFilterTooltip-link' | translate }}"></div>
                   </div>
                 </div>
                 <div class="right-side-filter">
                   <div class="filter-colm geo-filter-cont" id="abId0.6149162834088198">
-                    <label>Geografisk filtrering</label>
+                    <label data-translate="searchGeographicFilter"></label>
                     <div class="live-search-dd-cont" id="abId0.436428290830839">
                       <div class="custom-fld-cont" id="abId0.04694894537269523" abineguid="642F5A31C48A429E83484111F435AA09">
                         <span class="icon-search"></span>
@@ -101,17 +88,10 @@
                   </div>
                   <div class="filter-colm draw-map-link-colm">
                     <a href="" class="fltr-link draw-map-link">Rita på karta</a>
-                    <div class="help-icn-cont">
-                      <div class="help-icn-circle"><span class="icon-help"></span></div>
-                      <div class="tool-tip-cont">
-                        <div class="tool-tip">
-                          <span class="triangle"></span>
-                          <h2>Sökning på ämnesområden</h2>
-                          <p>Markera ett eller flera ämnesområden du vill söka geodata inom.</p>
-                          <p>Kan kombineras med fritextsökning.</p>
-                        </div>
-                      </div>
-                    </div>
+                    <div data-swe-tooltip=""
+                         data-title="{{ 'geographicalFilterTooltip-title' | translate }}"
+                         data-text="{{ 'geographicalFilterTooltip-desc' | translate }}"
+                         data-link="{{ 'geographicalFilterTooltip-link' | translate }}"></div>
                   </div>
                 </div>
               </div>
@@ -124,6 +104,10 @@
                    data-current-facets="currentFacets">
               </div>
 
+              <div data-swe-tooltip=""
+                   data-title="{{ 'facetsFilterTooltip-title' | translate }}"
+                   data-text="{{ 'facetsFilterTooltip-desc' | translate }}"
+                   data-link="{{ 'facetsFilterTooltip-link' | translate }}"></div>
             </div>
           </div>
         </div>
@@ -135,7 +119,7 @@
 
 <div class="site-filter-result-cont">
   <div class="data-result-cont">
-    <span class="result-text" data-ng-show="searchResults.count >= 0">visar <b>{{searchResults.count}}</b> resultat</span>
+    <span class="result-text" data-ng-show="searchResults.count >= 0"><span data-translate="">shows</span> <b>{{searchResults.count}}</b> <span data-translate="">results</span></span>
     <ul class="selected-filter-list">
       <li data-ng-show="searchObj.params.resourceDateFrom">
         <a href="" data-ng-click="unselectResourceDateFrom()">
@@ -175,6 +159,6 @@
       </li>
 
     </ul>
-    <a href="" data-ng-click="toggleFilterPanel()" class="filter-toggle-link opens-filter-section">visa filtrering <span class="icon-up-dir"></span><span class="icon-down-dir"></span></a>
+    <a href="" data-ng-click="toggleFilterPanel()" class="filter-toggle-link opens-filter-section"><span data-translate="">showFiltering</span> <span class="icon-up-dir"></span><span class="icon-down-dir"></span></a>
   </div>
 </div>

@@ -1416,10 +1416,6 @@ Detta undviker vi att ange, ange istället organisation.</description>
             <code>swe</code>
             <label>Svenska(swe)</label>
           </entry>
-          <entry>
-            <code>ger</code>
-            <label>Tyska(ger)</label>
-          </entry>
         </codelist>
     </element>
     <element context="gmd:MD_DataIdentification" id="39.0" name="gmd:language">
@@ -1455,10 +1451,6 @@ Detta undviker vi att ange, ange istället organisation.</description>
           <entry>
             <code>fiu</code>
             <label>Tornedalsfinska(fiu)</label>
-          </entry>
-          <entry>
-            <code>ger</code>
-            <label>Tyska(ger)</label>
           </entry>
         </codelist>
     </element>
@@ -1554,18 +1546,10 @@ intervall och omfattning av uppdateringar.</description>
         <description>Namn på den standard som metadatamängden följer
 inklusive namn på eventuell profil
 Ex. SS-EN ISO 19115.</description>
-		<helper sort="true">
-			<option value="SS-EN ISO 19115:2005-geodata.se">SS-EN ISO 19115:2005-geodata.se</option>
-			<option value="SS-EN ISO 19115:2005-geodata.se version 3.1">SS-EN ISO 19115:2005-geodata.se version 3.1</option>
-		</helper>
     </element>
     <element id="11.0" name="gmd:metadataStandardVersion">
         <label>Version av metadatastandard</label>
         <description>Version av använd metadatastandard (10)</description>
-		<helper sort="true">
-			<option value="Naturvårdsverket 4.0">Naturvårdsverket 4.0</option>
-		</helper>
-
     </element>
     <element id="261.0" name="gmd:minValue">
         <label>Minimivärde</label>
@@ -2285,7 +2269,7 @@ Ex. “under produktion” eller ”färdigställd”.</description>
         <label>Nyckelordslexikon</label>
         <description>Hänvisning till nyckelordslexikon</description>
     </element>
-	<element context="gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_DomainConsistency/gmd:result/gmd:DQ_ConformanceResult/gmd:specification/gmd:CI_Citation/gmd:title" id="900.0" name="gmd:title">
+	<element context="/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_DomainConsistency/gmd:result/gmd:DQ_ConformanceResult/gmd:specification/gmd:CI_Citation/gmd:title" id="900.0" name="gmd:title">
 		<label>Titel</label>
 		<description>Namn som den hänvisade rapporten är känd under</description>
         <condition>mandatory</condition>

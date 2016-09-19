@@ -1,0 +1,21 @@
+{
+  "name": "Geonetwork_e2e",
+  "version": "1.0.0",
+  "description": "e2e  Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor protractor-conf.js"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "sejnje",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "cucumber": "^1.0.0",
+    "protractor": "^3.3.0",
+    "protractor-cucumber-framework": "^0.6.0"
+  }
+}

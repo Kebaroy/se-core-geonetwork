@@ -560,38 +560,7 @@
            });
          };
        }]);
-
-
-  /**
-   * Controller for the landing page popup.
-   *
-   */
-  module.controller('SweLandingPageWarningController', [
-    '$cookies', '$scope',
-    function($cookies, $scope) {
-
-      $scope.hideLandingPage = true;
-
-      $scope.init = function() {
-        var hiddenLandingPage = window.localStorage.getItem('hideLandingPage');
-
-        if (hiddenLandingPage) {
-          angular.element('#landing-popup').removeClass('show');
-        } else {
-          angular.element('#landing-popup').addClass('show');
-          $scope.$emit('body:class:add', 'show-overlay');
-        }
-      };
-
-      $scope.close = function() {
-        if ($scope.hideLandingPage) {
-          window.localStorage.setItem('hideLandingPage', true);
-        }
-        angular.element('#landing-popup').removeClass('show');
-        $scope.$emit('body:class:remove', 'show-overlay');
-      };
-    }]);
-
+  
   /**
    * Controller for mail feedback popup.
    *
@@ -877,7 +846,7 @@
       text: 'Filter 4',
       query: 'Filter Query 4',
       url: 'http://localhost:8080/geonetwork/catalog/views/' +
-       'swe/resources/owscontext.xml'
+          'swe/resources/owscontext.xml'
     }];
 
     $scope.doFilter = function(query) {
@@ -919,4 +888,5 @@
         return result;
       };
     }]);
+
 })();

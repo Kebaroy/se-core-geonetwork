@@ -194,6 +194,44 @@
 
   /**
    * @ngdoc directive
+   * @name sweTooltip
+   * @function
+   *
+   * @description
+   * Displays a tooltip element.
+   *
+   */
+  module.directive('sweTooltip', ['$timeout',
+    function($timeout) {
+      return {
+        restrict: 'A',
+        replace: true,
+        templateUrl: '../../catalog/views/swe/directives/' +
+          'partials/tooltip.html',
+        scope: {
+          title: '@',
+          text: '@',
+          link: '@'
+        },
+        link: function(scope, elem) {
+          $timeout(function () {
+            elem.on('click', '.help-icn-circle', function () {
+              var tooltipElem = elem.find('.tool-tip-cont');
+              
+              if (tooltipElem.hasClass('open')) {
+                tooltipElem.removeClass('open'); 
+              } else {
+                tooltipElem.addClass('open');
+              }
+            })
+          })
+        }
+      };
+    }
+  ]);
+
+  /**
+   * @ngdoc directive
    * @name sweMdActionsMenu
    * @function
    *
